@@ -1,0 +1,76 @@
+name: cake_cost
+description: Калькулятор себестоимости для домашних кондитеров (MVP)
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  provider: ^6.0.5
+  path_provider: ^2.0.13
+  archive: ^3.4.10
+  share_plus: ^7.2.1
+  excel: ^2.1.0
+  file_saver: ^0.2.12
+  pdf: ^3.10.7
+  open_filex: ^4.4.0
+  file_picker: ^8.0.3
+  url_launcher: ^6.3.0
+  package_info_plus: ^8.0.0
+  csv: ^5.1.1
+  syncfusion_flutter_xlsio: ^25.1.40
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^2.0.0
+  build_runner: ^2.4.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - lib/assets/home/
+    - lib/assets/branding/
+    - lib/assets/fonts/
+    - assets/help/
+    - assets/fonts/
+    - assets/fonts/Roboto-Regular.ttf
+    - assets/fonts/Roboto-Bold.ttf
+
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: lib/assets/fonts/NotoSans-Regular.ttf
+
+    - family: RobotoCustom
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+
+# ---------- App icon ----------
+flutter_icons:
+  android: true
+  ios: true
+  min_sdk_android: 21
+  image_path_ios: lib/assets/branding/app_icon.png
+  adaptive_icon_background: lib/assets/branding/app_icon_bg.png
+  adaptive_icon_foreground: lib/assets/branding/app_icon_fg.png
+  image_path: lib/assets/branding/app_icon.png
+
+# ---------- Splash screen ----------
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+  color: "#7A1E1E"
+  android_12:
+    color: "#7A1E1E"

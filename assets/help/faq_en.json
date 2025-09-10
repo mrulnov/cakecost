@@ -1,0 +1,30 @@
+[
+  {
+    "q": "What is included for free?",
+    "a": "Catalogs (ingredients, packaging, resources), assortment list, backups. You can create up to 3 sub-recipes and 3 recipes. Includes 1 trial scaling and 1 demo export."
+  },
+  {
+    "q": "What does the Pro subscription include?",
+    "a": "Unlimited recipes and sub-recipes, Excel/PDF export without watermark, unlimited scaling, and future Pro features."
+  },
+  {
+    "q": "Can I save a scaled recipe without Pro?",
+    "a": "Yes, you can overwrite the current recipe. Saving as a copy when you already have 3/3 is not allowed — Pro is required or replace one of the existing recipes."
+  },
+  {
+    "q": "Why do I need a demo export?",
+    "a": "So you can preview what reports look like. The free version includes one demo export with a watermark."
+  },
+  {
+    "q": "Does the app work offline?",
+    "a": "Yes. All data is stored locally. Internet will be required later for purchasing/restoring the subscription."
+  },
+  {
+    "q": "Where is my data stored?",
+    "a": "On your device. We recommend regular ZIP backups stored in a safe place."
+  },
+  {
+    "q": "When will subscriptions be available?",
+    "a": "Pro will be available in an upcoming update (v1.1). After that you can subscribe monthly or yearly."
+  }
+]
