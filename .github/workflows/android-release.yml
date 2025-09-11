@@ -1,13 +1,12 @@
-name: Android Release (APK + AAB)
+name: CI: Android release build with signing
 
 on:
-  workflow_dispatch:
   push:
-    tags:
-      - 'v*'   # по желанию: запускать на тегах v1.0.0 и т.п.
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-  build-android:
+  android-release:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,48 +17,51 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: "17"
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          cache: true
 
-      - name: Show Flutter version
-        run: flutter --version
-
-      # ⬇️ кладём JKS в android/app
-      - name: Decode keystore from secret
+      # Восстанавливаем keystore из секрета
+      - name: Decode keystore
         run: |
-          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/app/cakecost-release.jks
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/cakecost-release.jks
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
 
-      # ⬇️ очень важно: storeFile БЕЗ "app/", т.к. путь берётся относительно android/app
-      - name: Create key.properties
+      # Создаём key.properties для Gradle (читается в build.gradle.kts)
+      - name: Write key.properties
         run: |
-          cat > android/key.properties <<'EOF'
+          cat > android/key.properties << 'EOF'
+          storeFile=app/cakecost-release.jks
           storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
           keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
-          storeFile=cakecost-release.jks
+          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
           EOF
 
-      - name: Flutter pub get
+      - name: Flutter version
+        run: flutter --version
+
+      - name: Pub get
         run: flutter pub get
 
-      - name: Build release APK
-        run: flutter build apk --release
-
-      - name: Build release AAB
+      # Релизные сборки
+      - name: Build AAB
         run: flutter build appbundle --release
 
-      - name: Upload APK artifact
+      - name: Build APK
+        run: flutter build apk --release
+
+      # Публикуем артефакты
+      - name: Upload app-release.apk
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
 
-      - name: Upload AAB artifact
+      - name: Upload app-release.aab
         uses: actions/upload-artifact@v4
         with:
           name: app-release-aab
