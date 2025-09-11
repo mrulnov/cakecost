@@ -6,3 +6,6 @@
 ```bash
 flutter pub get
 flutter run
+
+## Лицензия
+Proprietary — все права защищены. См. файл LICENSE.
