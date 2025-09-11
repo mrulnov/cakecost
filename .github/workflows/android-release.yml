@@ -8,7 +8,6 @@ on:
 jobs:
   android-release:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,7 +24,6 @@ jobs:
       - name: Pub get
         run: flutter pub get
 
-      # 1) раскодируем jks в android/app/
       - name: Decode keystore
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
@@ -34,7 +32,6 @@ jobs:
           echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android/app/cakecost-release.jks
           ls -la android/app
 
-      # 2) создаём key.properties в android/
       - name: Create key.properties
         run: |
           cat > android/key.properties <<'EOF'
@@ -45,14 +42,12 @@ jobs:
           EOF
           echo "key.properties written."
 
-      # 3) релизные сборки
       - name: Build release APK
         run: flutter build apk --release
 
       - name: Build release AAB
         run: flutter build appbundle --release
 
-      # 4) артефакты
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
