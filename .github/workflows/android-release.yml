@@ -47,6 +47,13 @@ jobs:
           EOF
           echo "key.properties written."
 
+      - name: Inspect signing files (no secrets)
+        run: |
+          echo "--- key.properties (redacted) ---"
+          grep -vE 'Password|Alias' android/key.properties || true
+          echo "--- android/app listing ---"
+          ls -la android/app
+
       - name: Build release APK
         run: flutter build apk --release
 
