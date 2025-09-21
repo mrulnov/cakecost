@@ -1,33 +1,42 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>Cake&Cost — поддержка и документы</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Страница поддержки приложения Cake&Cost: контакты, ссылки на политику и соглашение.">
+  <meta charset="utf-8" />
+  <title>Cake&Cost — поддержка</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Поддержка приложения Cake&Cost: контакты, FAQ, политиka и соглашение." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%237a5a67'/%3E%3Cpath d='M16 38h32v8a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4z' fill='%23fff'/%3E%3Cpath d='M16 36c8-6 24-6 32 0v2H16z' fill='%23c08aa6'/%3E%3Ccircle cx='27' cy='26' r='3' fill='%23fff'/%3E%3C/svg%3E" />
   <style>
     :root{
-      --bg:#fff; --fg:#111; --muted:#666; --brand:#7A1E1E; --card:#faf6f6; --border:#eee;
-      --btn:#7A1E1E; --btnfg:#fff;
+      /* палитра (мавовый сет) */
+      --ink:#1a1a1a;
+      --muted:#6b6b6b;
+      --bg:#ffffff;
+      --bg-soft:#faf7fa;
+      --card:#ffffff;
+      --border:#ece7ee;
+      --brand:#7a5a67;   /* тёмный пыльно-сливовый */
+      --brand-2:#a77f97; /* средний розово-лиловый */
+      --btn:#7a5a67; --btn-fg:#fff;
+      --pill:#efe8f1;
     }
     *{box-sizing:border-box}
-    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg)}
-    .wrap{max-width:920px;margin:32px auto;padding:0 16px}
-    header{display:flex;align-items:center;gap:14px;margin:8px 0 20px}
-    .logo{
-      width:44px;height:44px;border-radius:10px;background:var(--brand);
-      display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+    body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    .wrap{max-width:960px;margin:32px auto;padding:0 16px}
+    header{display:flex;align-items:center;gap:14px;margin:4px 0 18px}
+    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;font-weight:800}
     h1{margin:0;font-size:28px;line-height:1.2}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin:14px 0}
+    .muted{color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 1px 0 rgba(0,0,0,.02)}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     @media (max-width:760px){.row{grid-template-columns:1fr}}
-    .pill{display:inline-block;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 12px;margin:4px 8px 0 0}
     .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--border);text-decoration:none}
-    .btn.primary{background:var(--btn);border-color:var(--btn);color:var(--btnfg)}
-    .muted{color:var(--muted)}
+    .btn{padding:11px 14px;border-radius:12px;border:1px solid var(--border);text-decoration:none;color:var(--ink);background:#fff}
+    .btn.primary{background:var(--btn);border-color:var(--btn);color:var(--btn-fg)}
+    .btn.ghost{background:var(--bg-soft)}
+    .pill{display:inline-block;background:var(--pill);border:1px solid var(--border);border-radius:999px;padding:6px 12px;margin:6px 8px 0 0;font-size:14px}
     footer{margin:28px 0 10px;color:var(--muted);font-size:14px}
-    code{background:#f6f6f6;border:1px solid var(--border);padding:2px 6px;border-radius:6px}
+    code{background:#f6f6f9;border:1px solid var(--border);padding:2px 6px;border-radius:6px}
   </style>
 </head>
 <body>
@@ -41,17 +50,18 @@
     </header>
 
     <section class="card">
-      <p><strong>Нужна помощь или хотите оставить отзыв?</strong> Напишите нам — отвечаем по рабочим дням.</p>
+      <p><strong>Нужна помощь или хотите оставить отзыв?</strong> Напишите нам — обычно отвечаем по рабочим дням.</p>
       <div class="btns">
         <a class="btn primary" href="mailto:m.rulnov@yandex.ru?subject=Cake%26Cost%20—%20вопрос/обратная%20связь">Написать в поддержку</a>
-        <a class="btn" href="./privacy-policy.html">Политика конфиденциальности</a>
-        <a class="btn" href="./terms.html">Пользовательское соглашение</a>
+        <a class="btn" href="./faq.html">Частые вопросы (FAQ)</a>
+        <a class="btn ghost" href="./privacy-policy.html">Политика конфиденциальности</a>
+        <a class="btn ghost" href="./terms.html">Пользовательское соглашение</a>
       </div>
     </section>
 
     <section class="row">
       <div class="card">
-        <h3 style="margin-top:0">О приложении</h3>
+        <h3 style="margin:0 0 6px">О приложении</h3>
         <p>Cake&Cost помогает считать себестоимость, цену и маржу; поддерживает субрецепты, пересчёт форм, экспорт PDF и Excel.</p>
         <div class="pill">Себестоимость</div>
         <div class="pill">Субрецепты</div>
@@ -59,27 +69,17 @@
         <div class="pill">PDF/Excel</div>
       </div>
       <div class="card">
-        <h3 style="margin-top:0">Контакты правообладателя</h3>
+        <h3 style="margin:0 0 6px">Контакты правообладателя</h3>
         <p>
-          Правообладатель: <strong>Рульнов Максим Дмитриевич</strong><br>
-          Адрес: <strong>г.&nbsp;Балашиха, Россия</strong><br>
-          Email поддержки: <a href="mailto:m.rulnov@yandex.ru">m.rulnov@yandex.ru</a>
+          Правообладатель: <strong>Рульнов Максим Дмитриевич</strong><br/>
+          Адрес: <strong>г.&nbsp;Балашиха, Россия</strong><br/>
+          Email: <a href="mailto:m.rulnov@yandex.ru">m.rulnov@yandex.ru</a>
         </p>
-        <p class="muted" style="margin-top:6px">Документы доступны выше. Если заметили неточность в данных — сообщите нам.</p>
+        <p class="muted" style="margin-top:6px">Если заметили неточность — сообщите нам. Документы доступны по ссылкам выше.</p>
       </div>
     </section>
 
-    <section class="card">
-      <h3 style="margin-top:0">Частые вопросы</h3>
-      <ul>
-        <li><strong>Где сохраняются файл(ы) экспорта?</strong> Через системный диалог Android (SAF) в выбранную вами папку.</li>
-        <li><strong>Есть ли интернет-доступ?</strong> Приложение работает офлайн; интернет нужен только для открытия ссылок и обновления.</li>
-        <li><strong>Когда появится PRO?</strong> Покупка PRO будет добавлена в ближайшем обновлении — следите за новостями в RuStore.</li>
-      </ul>
-      <div class="muted">Версия страницы: <code>support-2025-09-17</code></div>
-    </section>
-
-    <footer>© Cake&Cost, 2025</footer>
+    <footer>© Cake&Cost, 2025 · Версия страницы: <code>support-2025-09-21</code></footer>
   </div>
 </body>
 </html>
