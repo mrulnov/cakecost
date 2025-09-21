@@ -4,132 +4,95 @@
   <meta charset="utf-8">
   <title>Cake&Cost — поддержка и документы</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Поддержка приложения Cake&Cost: связь, FAQ, политика конфиденциальности и пользовательское соглашение.">
+  <meta name="description" content="Поддержка Cake&Cost: связь, FAQ, политика конфиденциальности и пользовательское соглашение.">
   <style>
     :root{
-      /* палитра под приложение */
-      --bg:#fff;
-      --fg:#221b1e;
-      --muted:#6e6970;
-      --brand:#7A1E1E;
-      --brand-2:#B3798A;
-      --card:#faf6f6;
-      --border:#eee;
-      --btn:#7A1E1E;
-      --btnfg:#fff;
-      --accent:#EFE6E8;
+      --fg:#221b1e; --muted:#6e6970;
+      --brand:#7A1E1E; --card:#faf6f6; --border:#eee;
+      --btn:#7A1E1E; --btnfg:#fff; --accent:#EFE6E8;
+      --bg:#ffffff;
     }
-
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--fg);
-      background:var(--bg)
-    }
+    body{margin:0;background:var(--bg);color:var(--fg);
+         font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     .wrap{max-width:920px;margin:32px auto;padding:0 16px}
-
-    header{display:flex;align-items:center;gap:16px;margin:8px 0 20px}
-    .logo{
-      width:56px;height:56px;border-radius:12px;
-      background:var(--brand);display:inline-flex;align-items:center;justify-content:center;
-      overflow:hidden
-    }
-    .logo img{width:100%;height:100%;object-fit:cover}
-    h1{margin:0;font-size:28px;line-height:1.2}
     .muted{color:var(--muted)}
+    .logo-top{display:flex;justify-content:center;margin:4px 0 18px}
+    .logo-top img{width:72px;height:72px;border-radius:16px;object-fit:cover}
 
-    .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:20px;
-      margin:16px 0
-    }
+    .card{background:var(--card);border:1px solid var(--border);
+          border-radius:16px;padding:20px;margin:16px 0}
 
-    .btn{display:inline-flex;align-items:center;justify-content:center;
-      gap:.6rem;text-decoration:none;border-radius:12px;padding:14px 16px;
-      border:1px solid var(--border);background:#fff;color:var(--fg);font-weight:600}
+    .btn{display:flex;align-items:center;gap:.8rem;text-decoration:none;
+         border-radius:12px;padding:14px 16px;border:1px solid var(--border);
+         background:#fff;color:var(--fg);font-weight:700}
     .btn.primary{background:var(--btn);border-color:var(--btn);color:var(--btnfg)}
     .btn.accent{background:var(--accent);border-color:#e9d8dc}
-    .btn.block{width:100%}
-    .btn small{display:block;font-weight:500;color:var(--muted);line-height:1}
+    .btn.block{width:100%;justify-content:center}
+    .btn .sub{display:block;font-size:12px;line-height:1.2;font-weight:600;color:var(--muted)}
+
+    /* telegram list */
+    .tg-list{display:grid;gap:12px}
+    .btn.tg img{width:20px;height:20px}
+    .btn.tg .title{display:block;line-height:1.2}
+    .btn.tg .sub{margin-top:2px}
 
     .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     @media (max-width:760px){.row{grid-template-columns:1fr}}
-
-    /* Telegram-блок */
-    .tg-grid{
-      display:grid;
-      grid-template-columns:120px 1fr;
-      gap:16px;
-      align-items:center
-    }
-    .tg-logo{
-      width:120px;height:120px;border-radius:16px;background:#fff;border:1px solid var(--border);
-      display:flex;align-items:center;justify-content:center;overflow:hidden
-    }
-    .tg-logo img{width:100%;height:100%;object-fit:cover}
-
-    .tg-buttons{
-      display:grid;
-      grid-template-rows:1fr 1fr;
-      gap:12px;
-      height:120px
-    }
-    .btn.tg{background:#fff}
-    .btn.tg span{display:block;line-height:1.2}
-    .btn.tg small{font-size:12px;margin-top:2px}
-
     footer{margin:28px 0 10px;color:var(--muted);font-size:14px}
     code{background:#f6f6f6;border:1px solid var(--border);padding:2px 6px;border-radius:6px}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <!-- заголовок -->
-    <header>
-      <div class="logo"><img src="./img/logo.png" alt="Cake&Cost логотип"></div>
-      <div>
-        <h1>Cake&Cost — поддержка</h1>
-        <div class="muted">Калькулятор для домашних кондитеров: себестоимость, цена, маржа и удобные документы.</div>
-      </div>
-    </header>
 
-    <!-- герой: краткое объяснение + основные действия -->
+    <!-- логотип по центру -->
+    <div class="logo-top">
+      <img src="./img/logo.png" alt="Логотип Cake&Cost">
+    </div>
+
+    <!-- intro + две широкие кнопки -->
     <section class="card">
-      <p style="margin-top:0">
-        <strong>Cake&Cost</strong> помогает быстро посчитать стоимость десерта, выставить цену с&nbsp;нужной
-        наценкой и получить аккуратный расчёт для клиента. Идеален для домашних кондитеров, частных пекарен
-        и мам, которые делают заказы на дому.
+      <h1 style="margin:0 0 8px 0;font-size:26px;line-height:1.2">Cake&Cost — поддержка</h1>
+      <p style="margin:0">
+        <strong>Cake&Cost</strong> помогает домашним кондитерам быстро посчитать себестоимость
+        и цену десертов, учитывать субрецепты и делать аккуратные документы для клиентов.
       </p>
 
-      <!-- главные кнопки: поддержка и FAQ -->
-      <div style="display:grid;gap:12px;margin-top:12px">
-        <a class="btn primary block" href="mailto:m.rulnov@yandex.ru?subject=Cake%26Cost%20—%20вопрос/обратная%20связь">Написать в поддержку</a>
-        <a class="btn block accent" href="./faq.html">FAQ — ответы на частые вопросы</a>
+      <div style="display:grid;gap:12px;margin-top:16px">
+        <a class="btn primary block"
+           href="mailto:m.rulnov@yandex.ru?subject=Cake%26Cost%20—%20вопрос/обратная%20связь">
+          Написать в поддержку
+        </a>
+
+        <a class="btn accent block" href="./faq.html">
+          <span>
+            <span style="display:block">FAQ</span>
+            <span class="sub">ответы на частые вопросы</span>
+          </span>
+        </a>
       </div>
     </section>
 
-    <!-- Telegram -->
+    <!-- Telegram: две кнопки по ширине, с иконкой -->
     <section class="card">
-      <h3 style="margin:0 0 10px 0">Новости и обратная связь</h3>
-      <div class="tg-grid">
-        <div class="tg-logo">
-          <!-- квадратная иконка телеграм: docs/img/telegram.png -->
-          <img src="./img/telegram.png" alt="Telegram">
-        </div>
+      <h3 style="margin:0 0 10px 0">Новости и общение</h3>
+      <div class="tg-list">
+        <a class="btn tg block" href="https://t.me/cakecost_app" target="_blank" rel="noopener">
+          <img src="./img/telegram.png" alt="TG">
+          <span>
+            <span class="title">Cake&amp;Cost</span>
+            <span class="sub">официальный канал</span>
+          </span>
+        </a>
 
-        <div class="tg-buttons">
-          <a class="btn tg" href="https://t.me/cakecost_app" target="_blank" rel="noopener">
-            <span>Cake&amp;Cost</span>
-            <small>официальный канал</small>
-          </a>
-          <a class="btn tg" href="https://t.me/MRulnoff" target="_blank" rel="noopener">
-            <span>M.Rulnoff</span>
-            <small>автор приложения</small>
-          </a>
-        </div>
+        <a class="btn tg block" href="https://t.me/MRulnoff" target="_blank" rel="noopener">
+          <img src="./img/telegram.png" alt="TG">
+          <span>
+            <span class="title">M.Rulnoff</span>
+            <span class="sub">автор приложения</span>
+          </span>
+        </a>
       </div>
     </section>
 
@@ -153,9 +116,7 @@
       </div>
     </section>
 
-    <footer>
-      Версия страницы: <code>support-2025-09-21</code> · © Cake&Cost, 2025
-    </footer>
+    <footer>Версия страницы: <code>support-2025-09-21b</code> · © Cake&Cost, 2025</footer>
   </div>
 </body>
 </html>
