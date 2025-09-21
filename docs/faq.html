@@ -1,62 +1,71 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Cake&Cost — FAQ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FAQ приложения Cake&Cost: ответы на частые вопросы.">
   <style>
-    :root{
-      --ink:#1a1a1a; --muted:#6b6b6b; --bg:#ffffff; --card:#ffffff; --border:#ece7ee;
-      --brand:#7a5a67; --brand-2:#a77f97;
-    }
+    :root{ --fg:#221b1e; --muted:#6e6970; --card:#faf6f6; --border:#eee; --bg:#fff }
     *{box-sizing:border-box}
-    body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    body{margin:0;background:var(--bg);color:var(--fg);
+         font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     .wrap{max-width:920px;margin:32px auto;padding:0 16px}
-    header{display:flex;align-items:center;gap:14px;margin:4px 0 18px}
-    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;font-weight:800}
-    h1{margin:0;font-size:28px;line-height:1.2}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin:14px 0}
-    .q{font-weight:700;margin:12px 0 6px}
+    .logo-top{display:flex;justify-content:center;margin:4px 0 18px}
+    .logo-top img{width:72px;height:72px;border-radius:16px;object-fit:cover}
+    .card{background:var(--card);border:1px solid var(--border);
+          border-radius:16px;padding:20px;margin:16px 0}
+    h1{margin:0 0 8px 0;font-size:26px;line-height:1.2}
     .muted{color:var(--muted)}
-    a.btn{display:inline-block;margin-top:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--border);text-decoration:none;color:#fff;background:var(--brand)}
+    details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="logo">C</div>
-      <div>
-        <h1>Частые вопросы</h1>
-        <div class="muted">Cake&Cost — калькулятор для домашних кондитеров</div>
-      </div>
-    </header>
+    <div class="logo-top"><img src="./img/logo.png" alt="Cake&Cost"></div>
 
     <section class="card">
-      <div class="q">1) Что входит в бесплатную версию?</div>
-      <div>Справочники и ассортимент, резервное копирование, до 3 субрецептов и 3 рецептов, 1 пробный пересчёт и 1 демо-экспорт.</div>
+      <h1>FAQ — ответы на частые вопросы</h1>
 
-      <div class="q">2) Что даёт PRO-подписка?</div>
-      <div>Безлимит на рецепты и субрецепты, экспорт PDF/Excel без водяных знаков, масштабирование без ограничений.</div>
+      <details open>
+        <summary>Что входит в бесплатную версию?</summary>
+        <div class="muted">Справочники, ассортимент, резервное копирование. До 3 субрецептов и 3 рецептов, 1 пробный пересчёт и 1 демо-экспорт.</div>
+      </details>
 
-      <div class="q">3) Можно ли сохранить пересчитанный рецепт?</div>
-      <div>Да. В окне «Пересчёт рецепта» после расчёта нажмите «Сохранить как новый рецепт». В бесплатной версии — один раз.</div>
+      <details>
+        <summary>Что даёт Pro-подписка?</summary>
+        <div class="muted">Безлимит рецептов/субрецептов, экспорт Excel/PDF без водяных знаков, неограниченное масштабирование.</div>
+      </details>
 
-      <div class="q">4) Где хранятся файлы экспорта?</div>
-      <div>Через системный диалог Android (SAF) вы выбираете папку сами. Приложение не отправляет файлы в интернет.</div>
+      <details>
+        <summary>Можно ли сохранить пересчитанный рецепт?</summary>
+        <div class="muted">Да. После пересчёта сохраните как новый рецепт или замените текущий.</div>
+      </details>
 
-      <div class="q">5) Нужен ли интернет для работы?</div>
-      <div>Основной функционал работает офлайн. Интернет требуется только для открытия ссылок/покупок и проверки лицензии.</div>
+      <details>
+        <summary>Работает ли приложение офлайн?</summary>
+        <div class="muted">Да. Интернет нужен только для открытия ссылок и проверки обновлений.</div>
+      </details>
 
-      <div class="q">6) Что будет, если подписка закончится?</div>
-      <div>Приложение вернётся к ограничениям бесплатной версии. Ваши данные и созданные рецепты сохраняются, ничего не удаляется.</div>
+      <details>
+        <summary>Где искать файлы экспорта?</summary>
+        <div class="muted">Файлы сохраняются через системный диалог Android (SAF) в выбранную вами папку.</div>
+      </details>
 
-      <div class="q">7) Как связаться с поддержкой?</div>
-      <div>Пишите на <a href="mailto:m.rulnov@yandex.ru">m.rulnov@yandex.ru</a> — обычно отвечаем по рабочим дням.</div>
+      <details>
+        <summary>Как переносить данные на новый телефон?</summary>
+        <div class="muted">Сделайте резервную копию в разделе «Настройки и помощь» и восстановите её на новом устройстве.</div>
+      </details>
 
-      <a class="btn" href="./index.html">← Назад на страницу поддержки</a>
+      <details>
+        <summary>Что будет, если подписка закончилась?</summary>
+        <div class="muted">Функции становятся ограниченными, но ваши рецепты/субрецепты не удаляются. После продления весь функционал возвращается.</div>
+      </details>
+
+      <div class="muted" style="margin-top:12px">Версия: <code>faq-2025-09-21b</code></div>
     </section>
-
-    <footer class="muted">© Cake&Cost, 2025 · Версия страницы: <code>faq-2025-09-21</code></footer>
   </div>
 </body>
 </html>
