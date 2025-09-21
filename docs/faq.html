@@ -19,7 +19,8 @@
     .muted{color:var(--muted)}
     details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px 14px}
     details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:700}
+    summary{cursor:pointer;font-weight:700;outline:none}
+    summary::-webkit-details-marker{display:none}
   </style>
 </head>
 <body>
@@ -64,7 +65,7 @@
         <div class="muted">Функции становятся ограниченными, но ваши рецепты/субрецепты не удаляются. После продления весь функционал возвращается.</div>
       </details>
 
-      <div class="muted" style="margin-top:12px">Версия: <code>faq-2025-09-21b</code></div>
+      <div class="muted" style="margin-top:12px">Версия: <code>faq-2025-09-21c</code></div>
     </section>
   </div>
 </body>
