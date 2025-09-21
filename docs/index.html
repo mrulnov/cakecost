@@ -2,84 +2,132 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <title>Cake&Cost — поддержка</title>
+  <title>Cake&Cost — калькулятор себестоимости для домашних кондитеров</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Поддержка приложения Cake&Cost: контакты, FAQ, политиka и соглашение." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%237a5a67'/%3E%3Cpath d='M16 38h32v8a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4z' fill='%23fff'/%3E%3Cpath d='M16 36c8-6 24-6 32 0v2H16z' fill='%23c08aa6'/%3E%3Ccircle cx='27' cy='26' r='3' fill='%23fff'/%3E%3C/svg%3E" />
+  <meta name="description" content="Cake&Cost помогает быстро считать себестоимость, цену и прибыль изделий. Удобно для домашних кондитеров и небольших кондитерских." />
+  <meta name="theme-color" content="#7A1E1E" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cake&Cost — калькулятор себестоимости" />
+  <meta property="og:description" content="Себестоимость, цена, маржа, субрецепты и пересчёт форм — просто и по-человечески." />
+  <meta property="og:image" content="./img/logo.png" />
+
   <style>
     :root{
-      /* палитра (мавовый сет) */
-      --ink:#1a1a1a;
-      --muted:#6b6b6b;
-      --bg:#ffffff;
-      --bg-soft:#faf7fa;
+      /* фирменные тона (мягкая сливовая палитра + белый) */
+      --bg:#faf6f7;
       --card:#ffffff;
-      --border:#ece7ee;
-      --brand:#7a5a67;   /* тёмный пыльно-сливовый */
-      --brand-2:#a77f97; /* средний розово-лиловый */
-      --btn:#7a5a67; --btn-fg:#fff;
-      --pill:#efe8f1;
+      --ink:#2b2b2b;
+      --muted:#6b6b6b;
+      --brand:#7A1E1E;
+      --brand-weak:#CDA6B7;
+      --border:#eee;
+      --btn:#7A1E1E;
+      --btnfg:#fff;
     }
     *{box-sizing:border-box}
-    body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-    .wrap{max-width:960px;margin:32px auto;padding:0 16px}
-    header{display:flex;align-items:center;gap:14px;margin:4px 0 18px}
-    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#fff;font-weight:800}
-    h1{margin:0;font-size:28px;line-height:1.2}
+    html,body{margin:0;padding:0}
+    body{font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    .wrap{max-width:980px;margin:0 auto;padding:20px 16px 40px}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin:10px 0 18px}
+    .logo{width:120px;height:120px;border-radius:24px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    h1{margin:0;font-size:30px;line-height:1.2;font-weight:800;letter-spacing:.2px}
+    .subtitle{margin-top:4px;color:var(--muted)}
+    @media (max-width:720px){
+      .hero{grid-template-columns:1fr;justify-items:center;text-align:center}
+      .logo{width:96px;height:96px;border-radius:20px}
+      h1{font-size:26px}
+    }
+
+    /* карточки-секции */
+    .section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin:14px 0}
+    .section h2{margin:0 0 8px 0;font-size:20px;line-height:1.3}
+    .lead{font-size:18px}
+    ul.feature-list{margin:10px 0 0 0;padding-left:18px}
+    ul.feature-list li{margin:6px 0}
+
+    /* кнопки */
+    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .btn{display:inline-block;text-decoration:none;padding:11px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;color:var(--ink);font-weight:600}
+    .btn.primary{background:var(--btn);border-color:var(--btn);color:var(--btnfg)}
+    .btn.ghost{background:var(--card)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
+
     .muted{color:var(--muted)}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 1px 0 rgba(0,0,0,.02)}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media (max-width:760px){.row{grid-template-columns:1fr}}
-    .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .btn{padding:11px 14px;border-radius:12px;border:1px solid var(--border);text-decoration:none;color:var(--ink);background:#fff}
-    .btn.primary{background:var(--btn);border-color:var(--btn);color:var(--btn-fg)}
-    .btn.ghost{background:var(--bg-soft)}
-    .pill{display:inline-block;background:var(--pill);border:1px solid var(--border);border-radius:999px;padding:6px 12px;margin:6px 8px 0 0;font-size:14px}
-    footer{margin:28px 0 10px;color:var(--muted);font-size:14px}
-    code{background:#f6f6f9;border:1px solid var(--border);padding:2px 6px;border-radius:6px}
+    footer{margin:28px 0 6px;color:var(--muted);font-size:14px;text-align:center}
+    code.badge{background:#f6f6f6;border:1px solid var(--border);padding:2px 6px;border-radius:6px}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="logo">C</div>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="logo">
+        <!-- Положи файл по пути docs/img/logo.png -->
+        <img src="./img/logo.png" alt="Cake&Cost логотип">
+      </div>
       <div>
-        <h1>Cake&Cost — поддержка</h1>
-        <div class="muted">Калькулятор себестоимости для домашних кондитеров</div>
+        <h1>Cake&Cost</h1>
+        <div class="subtitle">Калькулятор себестоимости и цены для домашних кондитеров и небольших кондитерских</div>
       </div>
     </header>
 
-    <section class="card">
-      <p><strong>Нужна помощь или хотите оставить отзыв?</strong> Напишите нам — обычно отвечаем по рабочим дням.</p>
+    <!-- Коротко о ценности -->
+    <section class="section">
+      <p class="lead">
+        Считаете торты и десерты на заказ? <strong>Cake&Cost</strong> помогает быстро и аккуратно посчитать
+        себестоимость, цену продажи и прибыль — без сложных таблиц и «танцев с калькулятором».
+      </p>
+      <ul class="feature-list">
+        <li><strong>Простой ввод ингредиентов</strong> — продукты, граммовки, упаковка и накладные.</li>
+        <li><strong>Субрецепты</strong> — кремы, коржи и начинки повторно используются без ручного пересчёта.</li>
+        <li><strong>Пересчёт формы</strong> — автоматически под нужный диаметр/высоту/порции.</li>
+        <li><strong>Документы</strong> — экспорт спецификаций в PDF и Excel.</li>
+        <li><strong>Работает офлайн</strong> — интернет нужен только для открытия ссылок и обновлений.</li>
+      </ul>
       <div class="btns">
         <a class="btn primary" href="mailto:m.rulnov@yandex.ru?subject=Cake%26Cost%20—%20вопрос/обратная%20связь">Написать в поддержку</a>
-        <a class="btn" href="./faq.html">Частые вопросы (FAQ)</a>
-        <a class="btn ghost" href="./privacy-policy.html">Политика конфиденциальности</a>
-        <a class="btn ghost" href="./terms.html">Пользовательское соглашение</a>
+        <a class="btn" href="./faq.html">FAQ</a>
+        <a class="btn ghost" href="https://t.me/cakecost_app" target="_blank" rel="noopener">Telegram: Cake&Cost</a>
+        <a class="btn ghost" href="https://t.me/MRulnoff" target="_blank" rel="noopener">Telegram: M.Rulnoff — автор</a>
       </div>
     </section>
 
-    <section class="row">
-      <div class="card">
-        <h3 style="margin:0 0 6px">О приложении</h3>
-        <p>Cake&Cost помогает считать себестоимость, цену и маржу; поддерживает субрецепты, пересчёт форм, экспорт PDF и Excel.</p>
-        <div class="pill">Себестоимость</div>
-        <div class="pill">Субрецепты</div>
-        <div class="pill">Пересчёт форм</div>
-        <div class="pill">PDF/Excel</div>
-      </div>
-      <div class="card">
-        <h3 style="margin:0 0 6px">Контакты правообладателя</h3>
+    <!-- Тарифы/подписка -->
+    <section class="section grid-2">
+      <div>
+        <h2>Как это работает</h2>
         <p>
-          Правообладатель: <strong>Рульнов Максим Дмитриевич</strong><br/>
-          Адрес: <strong>г.&nbsp;Балашиха, Россия</strong><br/>
-          Email: <a href="mailto:m.rulnov@yandex.ru">m.rulnov@yandex.ru</a>
+          Базовые возможности доступны бесплатно: справочники, сохранение рецептов, резервные копии
+          (с разумными лимитами, чтобы попробовать и оценить).
         </p>
-        <p class="muted" style="margin-top:6px">Если заметили неточность — сообщите нам. Документы доступны по ссылкам выше.</p>
+        <p>
+          Для активной работы — <strong>PRO-подписка</strong>: безлимит рецептов и субрецептов,
+          экспорт без водяных знаков, пересчёт без ограничений.
+        </p>
+      </div>
+      <div>
+        <h2>Оплата и управление</h2>
+        <p>
+          Подписка оформляется в RuStore и может продлеваться автоматически. Управлять подпиской
+          (продлить/отменить) можно в аккаунте RuStore в любой момент.
+        </p>
+        <div class="btns">
+          <a class="btn" href="./privacy-policy.html">Политика конфиденциальности</a>
+          <a class="btn" href="./terms.html">Пользовательское соглашение</a>
+        </div>
       </div>
     </section>
 
-    <footer>© Cake&Cost, 2025 · Версия страницы: <code>support-2025-09-21</code></footer>
+    <footer>
+      © Cake&Cost, 2025 • Версия страницы: <code class="badge">support-2025-09-21</code>
+    </footer>
   </div>
 </body>
 </html>
